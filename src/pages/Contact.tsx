@@ -7,6 +7,7 @@ import ContactForm from "@/components/contact/ContactForm";
 import ContactMap from "@/components/contact/ContactMap";
 import SocialLinks from "@/components/contact/SocialLinks";
 import AnimatedCard from "@/components/ui/AnimatedCard";
+import { Toaster } from "@/components/ui/toaster";
 
 const Contact = () => {
   useEffect(() => {
@@ -41,6 +42,7 @@ const Contact = () => {
         <SocialLinks />
       </main>
       <Footer />
+      <Toaster />
     </div>
   );
 };
