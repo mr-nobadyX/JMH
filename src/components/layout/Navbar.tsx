@@ -24,7 +24,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 100) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -45,17 +45,15 @@ const Navbar = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-8",
-        isScrolled 
-          ? "py-3 bg-white shadow-md" 
-          : "py-5 bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-8 py-4",
+        isScrolled && "bg-white shadow-md"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
           <span className={cn(
-            "text-2xl font-bold transition-colors",
-            isScrolled ? "text-primary-700" : "text-white"
+            "text-2xl font-bold text-primary-600",
+            !isScrolled && "text-primary-600"
           )}>HealthHub</span>
         </Link>
 
@@ -69,9 +67,8 @@ const Navbar = () => {
                 "font-medium transition-colors",
                 isScrolled 
                   ? "text-gray-700 hover:text-primary-600" 
-                  : "text-white hover:text-gray-200",
-                location.pathname === link.href && 
-                  (isScrolled ? "text-primary-600 font-semibold" : "text-white font-semibold")
+                  : "text-gray-700 hover:text-primary-600",
+                location.pathname === link.href && "text-primary-600 font-semibold"
               )}
             >
               {link.name}
@@ -80,9 +77,7 @@ const Navbar = () => {
           <Button 
             onClick={handleAppointmentClick}
             asChild
-            className={cn(
-              isScrolled ? "bg-primary-600 hover:bg-primary-700" : "bg-white text-primary-700 hover:bg-gray-100"
-            )}
+            className="bg-primary-600 hover:bg-primary-700 text-white"
           >
             <a 
               href={`tel:${phoneNumber}`} 
@@ -100,8 +95,7 @@ const Navbar = () => {
             <SheetTrigger asChild>
               <button 
                 className={cn(
-                  "p-2 transition-colors",
-                  isScrolled ? "text-gray-700" : "text-white"
+                  "p-2 transition-colors text-gray-700"
                 )}
                 aria-label="Toggle menu"
               >
