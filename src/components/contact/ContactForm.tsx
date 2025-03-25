@@ -31,11 +31,11 @@ const formSchema = z.object({
   message: z.string().min(8, "Message must be at least 8 characters"),
 });
 
-// EmailJS configuration
+// EmailJS configuration with more conventional naming
 const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID"; // Replace with your EmailJS service ID
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Replace with your EmailJS template ID
 const EMAILJS_USER_ID = "YOUR_USER_ID"; // Replace with your EmailJS user ID
-const ADMIN_TEMPLATE_ID = "YOUR_ADMIN_TEMPLATE_ID"; // Replace with your admin notification template
+const EMAILJS_TEMPLATE_ID_ADMIN_TO_USER = "YOUR_TEMPLATE_ID_ADMIN_TO_USER"; // Template for sending confirmation to user
+const EMAILJS_TEMPLATE_ID_USER_TO_ADMIN = "YOUR_TEMPLATE_ID_USER_TO_ADMIN"; // Template for notifying admin
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -74,13 +74,13 @@ const ContactForm = () => {
       await Promise.all([
         emailjs.send(
           EMAILJS_SERVICE_ID,
-          EMAILJS_TEMPLATE_ID,
+          EMAILJS_TEMPLATE_ID_ADMIN_TO_USER,
           userEmailParams,
           EMAILJS_USER_ID
         ),
         emailjs.send(
           EMAILJS_SERVICE_ID,
-          ADMIN_TEMPLATE_ID,
+          EMAILJS_TEMPLATE_ID_USER_TO_ADMIN,
           adminEmailParams,
           EMAILJS_USER_ID
         )
