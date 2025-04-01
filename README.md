@@ -6,7 +6,7 @@
 
 ## How can I edit this codes?
 
-There are several ways of editing your application with out even knowing.
+There are several ways of editing your application with out even knowing?.
 
 **Use Lovables**
 
