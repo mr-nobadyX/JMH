@@ -12,7 +12,7 @@ There are several ways of editing your application with out even knowing?.
 
 Simply visit the [Lovable Project](https://lovable.dev/projects/5cb4995c-b0e7-4d7e-bd3e-ebb18cc8001e) and start prompting.
 
-Changes made via Lovable will be committed automatically to this repo.
+Changes made via Lovable will be committed automatically to this reposoties.
 
 **Use your preferred IDE**
 
