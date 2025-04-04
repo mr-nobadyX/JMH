@@ -4,7 +4,7 @@
 
 **URL**: https://lovable.dev/projects/5cb4995c-b0e7-4d7e-bd3e-ebb18cc8001e
 
-## How can I edit this codes using Ai or self?
+## How can I edit this codes using Ai or by my self?
 
 There are several ways of editing your application with out even knowing?.
 
